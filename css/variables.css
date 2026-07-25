@@ -1,0 +1,62 @@
+:root {
+  /* Colors — backgrounds */
+  --color-bg: #12141F;
+  --color-surface: #1C2033;
+  --color-surface-2: #232842;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* Colors — text */
+  --color-text: #F5F6FA;
+  --color-text-muted: #AAB0C6;
+  --color-text-faint: #6B7089;
+
+  /* Colors — accent (amber) */
+  --color-accent: #F5A623;
+  --color-accent-strong: #FFC15E;
+  --color-accent-contrast: #1B1300;
+
+  /* Colors — semantic */
+  --color-success: #4ADE80;
+  --color-warning: #F5A623;
+  --color-danger: #F87171;
+
+  /* Chat bubble colors */
+  --color-bubble-system: #232842;
+  --color-bubble-user: #F5A623;
+  --color-bubble-user-text: #1B1300;
+
+  /* Typography */
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2rem;
+  --fs-3xl: 2.75rem;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 0 1px var(--color-border), 0 8px 30px rgba(0, 0, 0, 0.35);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 450ms ease;
+}
