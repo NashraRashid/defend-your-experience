@@ -451,6 +451,15 @@ textarea.input-textarea:focus {
   border-left: 3px solid var(--color-danger);
 }
 
+/* ===== Footer ===== */
+.app-footer {
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: var(--color-text-faint);
+  padding: var(--space-4) 0 var(--space-2);
+  margin-top: auto;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
   .headline { font-size: var(--fs-2xl); }
