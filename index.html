@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- pdf.js: reads text out of PDF files, entirely in the browser -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <!-- mammoth.js: reads text out of DOCX files, entirely in the browser -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
 </head>
 <body>
 
@@ -35,7 +40,7 @@
 
       <div class="upload-zone" id="upload-zone">
         <div class="upload-zone-icon">📄</div>
-        <div>Drag & drop your PDF, DOCX, or TXT file</div>
+        <div id="upload-zone-text">Drag & drop your PDF, DOCX, or TXT file</div>
         <div class="subtext" style="margin: var(--space-2) 0 0;">or click to browse</div>
         <input type="file" id="resume-file-input" accept=".pdf,.docx,.txt" hidden />
       </div>
@@ -46,10 +51,10 @@
       <span class="optional-toggle" id="optional-toggle">▸ Optional: paste LinkedIn About / project context</span>
       <textarea class="input-textarea" id="linkedin-context" style="display:none;" placeholder="Paste your LinkedIn About section or extra project details..."></textarea>
 
-      <div class="input-error" id="input-error">Please upload a file or paste at least 100 characters of resume text.</div>
+      <div class="input-error" id="input-error"></div>
 
       <div class="btn-row">
-        <button class="btn btn-primary" data-goto="screen-processing" id="continue-btn">Continue →</button>
+        <button class="btn btn-primary" id="continue-btn">Continue →</button>
       </div>
     </section>
 
