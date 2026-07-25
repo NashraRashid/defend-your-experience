@@ -70,35 +70,14 @@
         <li><span class="check">✓</span> Categorizing achievements</li>
       </ul>
 
-      <div class="claims-group">
-        <div class="claims-group-label">Projects</div>
-        <div class="chip-row">
-          <span class="chip">NutriScope</span>
-          <span class="chip">Scan Desk</span>
-          <span class="chip">Prompt Puzzle</span>
-        </div>
-      </div>
-      <div class="claims-group">
-        <div class="claims-group-label">Technical Skills</div>
-        <div class="chip-row">
-          <span class="chip">JavaScript</span>
-          <span class="chip">Python</span>
-          <span class="chip">Django</span>
-          <span class="chip">Bootstrap</span>
-        </div>
-      </div>
-      <div class="claims-group">
-        <div class="claims-group-label">Education</div>
-        <div class="chip-row"><span class="chip">B.Tech, Integral University</span></div>
-      </div>
-      <div class="claims-group">
-        <div class="claims-group-label">Leadership</div>
-        <div class="chip-row"><span class="chip">ABTalks Challenge Series</span></div>
-      </div>
+      <!-- Claims are rendered here dynamically by screens.js — no hardcoded content -->
+      <div id="claims-container"></div>
+
+      <div class="input-error" id="claims-error"></div>
 
       <div class="btn-row">
         <button class="btn btn-secondary" data-goto="screen-input">Edit Resume</button>
-        <button class="btn btn-primary" data-goto="screen-interview">Start Interview →</button>
+        <button class="btn btn-primary" id="start-interview-btn">Start Interview →</button>
       </div>
     </section>
 
