@@ -38,20 +38,22 @@
 
       <h2 class="headline" style="font-size: var(--fs-2xl);">Upload your resume</h2>
 
-      <div class="upload-zone" id="upload-zone">
-        <div class="upload-zone-icon">📄</div>
+      <div class="upload-zone" id="upload-zone" tabindex="0" role="button" aria-label="Upload your resume file, PDF, DOCX, or TXT">
+        <div class="upload-zone-icon" aria-hidden="true">📄</div>
         <div id="upload-zone-text">Drag & drop your PDF, DOCX, or TXT file</div>
         <div class="subtext" style="margin: var(--space-2) 0 0;">or click to browse</div>
-        <input type="file" id="resume-file-input" accept=".pdf,.docx,.txt" hidden />
+        <input type="file" id="resume-file-input" accept=".pdf,.docx,.txt" hidden aria-label="Resume file upload" />
       </div>
 
       <div class="divider-text">— or paste your resume text —</div>
-      <textarea class="input-textarea" id="resume-paste" placeholder="Paste your resume text here..."></textarea>
+      <label for="resume-paste" class="sr-only">Paste your resume text</label>
+      <textarea class="input-textarea" id="resume-paste" placeholder="Paste your resume text here..." aria-label="Paste your resume text"></textarea>
 
-      <span class="optional-toggle" id="optional-toggle">▸ Optional: paste LinkedIn About / project context</span>
-      <textarea class="input-textarea" id="linkedin-context" style="display:none;" placeholder="Paste your LinkedIn About section or extra project details..."></textarea>
+      <span class="optional-toggle" id="optional-toggle" role="button" tabindex="0" aria-expanded="false">▸ Optional: paste LinkedIn About / project context</span>
+      <label for="linkedin-context" class="sr-only">Optional LinkedIn context</label>
+      <textarea class="input-textarea" id="linkedin-context" style="display:none;" placeholder="Paste your LinkedIn About section or extra project details..." aria-label="LinkedIn About or project context"></textarea>
 
-      <div class="input-error" id="input-error"></div>
+      <div class="input-error" id="input-error" role="alert"></div>
 
       <div class="btn-row">
         <button class="btn btn-primary" id="continue-btn">Continue →</button>
@@ -64,14 +66,14 @@
 
       <h2 class="headline" style="font-size: var(--fs-2xl);">Here's what we found</h2>
 
-      <ul class="processing-steps">
-        <li><span class="check">✓</span> Extracting projects</li>
-        <li><span class="check">✓</span> Extracting technical skills</li>
-        <li><span class="check">✓</span> Categorizing achievements</li>
+      <ul class="processing-steps" aria-label="Analysis progress">
+        <li><span class="check" aria-hidden="true">✓</span> Extracting projects</li>
+        <li><span class="check" aria-hidden="true">✓</span> Extracting technical skills</li>
+        <li><span class="check" aria-hidden="true">✓</span> Categorizing achievements</li>
       </ul>
 
-      <div id="claims-container"></div>
-      <div class="input-error" id="claims-error"></div>
+      <div id="claims-container" aria-live="polite"></div>
+      <div class="input-error" id="claims-error" role="alert"></div>
 
       <div class="btn-row">
         <button class="btn btn-secondary" data-goto="screen-input">Edit Resume</button>
@@ -85,11 +87,12 @@
       <div class="progress-bar"><div class="progress-bar-fill" style="width: 0%;"></div></div>
 
       <!-- Chat messages are rendered here dynamically by screens.js -->
-      <div class="chat-window" id="chat-window"></div>
+      <div class="chat-window" id="chat-window" role="log" aria-live="polite" aria-label="Interview conversation"></div>
 
       <div class="chat-input-row">
-        <input type="text" class="chat-input" id="chat-input" placeholder="Type your answer..." />
-        <button class="chat-send-btn" id="chat-send-btn">➤</button>
+        <label for="chat-input" class="sr-only">Type your answer</label>
+        <input type="text" class="chat-input" id="chat-input" placeholder="Type your answer..." aria-label="Type your answer" />
+        <button class="chat-send-btn" id="chat-send-btn" aria-label="Send answer">➤</button>
       </div>
     </section>
 
@@ -98,7 +101,7 @@
       <div class="progress-header"><span>Step 4 of 4</span><span>Defense Report</span></div>
 
       <div class="score-ring-wrap">
-        <svg class="score-ring" viewBox="0 0 160 160">
+        <svg class="score-ring" viewBox="0 0 160 160" role="img" aria-label="Confidence score">
           <circle cx="80" cy="80" r="68" fill="none" stroke="#232842" stroke-width="12" />
           <circle cx="80" cy="80" r="68" fill="none" stroke="#F5A623" stroke-width="12"
                    stroke-dasharray="427" stroke-dashoffset="94" stroke-linecap="round"
