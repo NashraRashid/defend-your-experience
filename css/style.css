@@ -1,3 +1,25 @@
+.btn:disabled,
+.chat-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(0.3);
+}
+
+.chat-input:disabled {
+  opacity: 0.6;
+}
+
+/* Programmatic focus targets (screen transitions) shouldn't show a
+   visible ring the way real keyboard focus does — :focus-visible
+   already handles genuine keyboard navigation separately. */
+[data-focus-target]:focus {
+  outline: none;
+}
+[data-focus-target]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 /* ===== Accessibility: screen-reader-only text ===== */
 .sr-only {
   position: absolute;

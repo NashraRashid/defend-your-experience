@@ -23,6 +23,15 @@ export function showScreen(screenId) {
     target.classList.add("active");
     setScreen(screenId);
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Accessibility: move focus to the new screen so keyboard and
+    // screen-reader users are told the view changed, instead of their
+    // focus silently staying on a now-hidden element.
+    const focusTarget = target.querySelector("[data-focus-target]") || target;
+    if (!focusTarget.hasAttribute("tabindex")) {
+      focusTarget.setAttribute("tabindex", "-1");
+    }
+    focusTarget.focus({ preventScroll: true });
   }
 }
 
@@ -311,8 +320,20 @@ function finishInterview() {
     chatWindow.scrollTop = chatWindow.scrollHeight;
 
     setTimeout(() => {
-      state.report = generateReport(state.answersLog, state.claims);
-      showScreen("screen-report");
+      try {
+        state.report = generateReport(state.answersLog, state.claims);
+        showScreen("screen-report");
+      } catch (err) {
+        console.error("Report generation failed:", err);
+        typingRow.remove();
+        chatWindow.appendChild(
+          createChatRow(
+            "Something went wrong generating your report. Please try clicking Restart and running the interview again.",
+            "system"
+          )
+        );
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      }
     }, 1200);
   }, 500);
 }

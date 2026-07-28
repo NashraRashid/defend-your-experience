@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Defend Your Experience</title>
+  <meta name="description" content="An AI-powered interview defense simulator. Upload your resume and face an adaptive mock interview built from your own claims, then get a Defense Report on how well you held up — 100% private, runs entirely in your browser." />
+  <meta property="og:title" content="Defend Your Experience" />
+  <meta property="og:description" content="Your resume is polished. Can you defend it? An adaptive mock interview simulator, 100% private." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2312141F'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%23F5A623'%3E%C2%AB%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/style.css" />
@@ -20,7 +25,7 @@
     <!-- SCREEN 1: LANDING -->
     <section id="screen-landing" class="screen active">
       <div class="eyebrow">Defend Your Experience</div>
-      <h1 class="headline">Your resume is polished.<br />Can you defend it?</h1>
+      <h1 class="headline" data-focus-target>Your resume is polished.<br />Can you defend it?</h1>
       <p class="subtext">
         Upload your resume and face an adaptive mock interview built from your own claims —
         projects, skills, and achievements — then get a Defense Report on how well you held up.
@@ -36,7 +41,7 @@
       <a href="#" class="back-link" data-goto="screen-landing">← Back</a>
       <div class="progress-header"><span>Step 1 of 4</span><span>Resume Input</span></div>
 
-      <h2 class="headline" style="font-size: var(--fs-2xl);">Upload your resume</h2>
+      <h2 class="headline" style="font-size: var(--fs-2xl);" data-focus-target>Upload your resume</h2>
 
       <div class="upload-zone" id="upload-zone" tabindex="0" role="button" aria-label="Upload your resume file, PDF, DOCX, or TXT">
         <div class="upload-zone-icon" aria-hidden="true">📄</div>
@@ -64,7 +69,7 @@
     <section id="screen-processing" class="screen">
       <div class="progress-header"><span>Step 2 of 4</span><span>Analyzing</span></div>
 
-      <h2 class="headline" style="font-size: var(--fs-2xl);">Here's what we found</h2>
+      <h2 class="headline" style="font-size: var(--fs-2xl);" data-focus-target>Here's what we found</h2>
 
       <ul class="processing-steps" aria-label="Analysis progress">
         <li><span class="check" aria-hidden="true">✓</span> Extracting projects</li>
@@ -87,7 +92,7 @@
       <div class="progress-bar"><div class="progress-bar-fill" style="width: 0%;"></div></div>
 
       <!-- Chat messages are rendered here dynamically by screens.js -->
-      <div class="chat-window" id="chat-window" role="log" aria-live="polite" aria-label="Interview conversation"></div>
+      <div class="chat-window" id="chat-window" role="log" aria-live="polite" aria-label="Interview conversation" data-focus-target></div>
 
       <div class="chat-input-row">
         <label for="chat-input" class="sr-only">Type your answer</label>
@@ -99,6 +104,7 @@
     <!-- SCREEN 5: DEFENSE REPORT -->
     <section id="screen-report" class="screen">
       <div class="progress-header"><span>Step 4 of 4</span><span>Defense Report</span></div>
+      <h2 class="sr-only" data-focus-target>Your Defense Report</h2>
 
       <div class="score-ring-wrap">
         <svg class="score-ring" viewBox="0 0 160 160" role="img" aria-label="Confidence score">
