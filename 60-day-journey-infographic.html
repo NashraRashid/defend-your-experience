@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>60-Day Journey — Defend Your Experience</title>
+<style>
+  :root {
+    --bg: #12141F;
+    --surface: #1C2033;
+    --accent: #F5A623;
+    --accent-strong: #FFC15E;
+    --text: #F5F6FA;
+    --muted: #AAB0C6;
+    --border: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(160deg, #0E1019, #171A2A 60%, #12141F);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    padding: 48px 24px;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  .eyebrow {
+    text-align: center;
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: Georgia, serif;
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 56px;
+  }
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 56px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent), rgba(245,166,35,0.15));
+  }
+  .stage {
+    position: relative;
+    padding-bottom: 32px;
+  }
+  .stage:last-child { padding-bottom: 0; }
+  .stage::before {
+    content: "";
+    position: absolute;
+    left: -32px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 3px solid var(--accent);
+  }
+  .stage-days {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .stage-title {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .stage-desc {
+    color: var(--muted);
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+  .capstone-card {
+    background: linear-gradient(135deg, rgba(245,166,35,0.12), rgba(28,32,51,0.9));
+    border: 1px solid rgba(245,166,35,0.35);
+    border-radius: 20px;
+    padding: 36px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(245,166,35,0.08);
+  }
+  .capstone-label {
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .capstone-title {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+  .capstone-desc {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 560px;
+    margin: 0 auto 24px;
+    line-height: 1.6;
+  }
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .skill-chip {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 12.5px;
+    color: var(--text);
+  }
+  .footer-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12.5px;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">AB Talks · 60-Day Claude AI Challenge</div>
+    <h1>From First Prompt to Shipped Product</h1>
+    <p class="subtitle">The skills that built up over 60 days, culminating in a real, deployed application</p>
+
+    <div class="timeline">
+      <div class="stage">
+        <div class="stage-days">Days 1–10 · Foundations</div>
+        <div class="stage-title">AI Fundamentals &amp; Effective Prompting</div>
+        <div class="stage-desc">Learning how large language models actually work, and how to communicate with them precisely — the groundwork every later skill builds on.</div>
+      </div>
+      <div class="stage">
+        <div class="stage-days">Days 11–20 · Thinking With AI</div>
+        <div class="stage-title">Reasoning &amp; Research Workflows</div>
+        <div class="stage-desc">Moving from single-shot prompts to structured reasoning — using AI as a thinking partner for research, analysis, and decomposing hard problems.</div>
+      </div>
+      <div class="stage">
+        <div class="stage-days">Days 21–30 · Automation</div>
+        <div class="stage-title">Automation &amp; Product Thinking</div>
+        <div class="stage-desc">Applying AI to real workflows and starting to think like a builder — not just what AI can answer, but what it can help ship.</div>
+      </div>
+      <div class="stage">
+        <div class="stage-days">Days 31–45 · Building</div>
+        <div class="stage-title">Increasingly Sophisticated AI Projects</div>
+        <div class="stage-desc">Hands-on construction of real tools and multimodal AI experiences — the direct precursors to the single-file apps that shaped this builder's portfolio.</div>
+      </div>
+      <div class="stage">
+        <div class="stage-days">Days 46–55 · Systems</div>
+        <div class="stage-title">Knowledge Systems &amp; Autonomous Agents</div>
+        <div class="stage-desc">Understanding how AI systems maintain context, make decisions, and act autonomously — the conceptual groundwork for designing a modular, swappable AI engine.</div>
+      </div>
+      <div class="stage">
+        <div class="stage-days">Days 56–59 · Collaboration</div>
+        <div class="stage-title">Multi-Agent Collaboration</div>
+        <div class="stage-desc">Exploring how multiple AI capabilities coordinate toward a single goal — echoed directly in this capstone's multi-stage pipeline: parsing → extraction → interview → report.</div>
+      </div>
+    </div>
+
+    <div class="capstone-card">
+      <div class="capstone-label">Day 60 · The Capstone</div>
+      <div class="capstone-title">Defend Your Experience</div>
+      <p class="capstone-desc">
+        A 10-day, solo-built, fully deployed AI-powered interview simulator — every skill above converged into requirements gathering, system design, implementation, testing, deployment, and a public v1.0.0 release.
+      </p>
+      <div class="skill-grid">
+        <div class="skill-chip">Product Discovery</div>
+        <div class="skill-chip">System Architecture</div>
+        <div class="skill-chip">Client-Side AI Logic</div>
+        <div class="skill-chip">Accessibility Engineering</div>
+        <div class="skill-chip">Security-Conscious Code</div>
+        <div class="skill-chip">Release Management</div>
+      </div>
+    </div>
+
+    <p class="footer-note">Skills evolved across 60 days of the AB Talks Claude AI Challenge — validated by shipping a real, working, publicly deployed product.</p>
+  </div>
+</body>
+</html>
