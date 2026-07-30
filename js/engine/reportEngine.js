@@ -58,12 +58,12 @@ export function generateReport(answersLog, claims) {
   // --- Strengths & weaknesses ---
   const strengths = answersLog
     .filter((a) => a.analysis === "strong")
-    .map((a) => summarizeClaimFromQuestion(a.questionText))
+    .map((a) => a.claimText || summarizeClaimFromQuestion(a.questionText))
     .filter(Boolean);
 
   const weaknesses = answersLog
     .filter((a) => a.analysis === "vague")
-    .map((a) => summarizeClaimFromQuestion(a.questionText))
+    .map((a) => a.claimText || summarizeClaimFromQuestion(a.questionText))
     .filter(Boolean);
 
   // Deduplicate (a claim with both an initial + follow-up vague answer
@@ -86,7 +86,7 @@ export function generateReport(answersLog, claims) {
   }
 
   // --- Practice questions: pull from claims the user wasn't asked about ---
-  const askedClaims = new Set(answersLog.map((a) => summarizeClaimFromQuestion(a.questionText)));
+  const askedClaims = new Set(answersLog.map((a) => a.claimText || summarizeClaimFromQuestion(a.questionText)));
   const allClaims = [
     ...(claims.projects || []),
     ...(claims.technicalSkills || []),
